@@ -1,0 +1,201 @@
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-header h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features-grid.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    grid-template-areas:
+        "bookkeeping tracking tax"
+        "insights   tracking integration";
+}
+
+.bookkeeping {
+    grid-area: bookkeeping;
+}
+
+.insights {
+    grid-area: insights;
+}
+
+.tracking {
+    grid-area: tracking;
+}
+
+.tax {
+    grid-area: tax;
+}
+
+.integration {
+    grid-area: integration;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card.primary {
+    border-top: 4px solid #4f46e5;
+}
+
+.feature-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    text-align: left;
+}
+
+.feature-text h3 {
+    margin: 0;
+}
+
+.feature-text p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.95rem;
+}
+
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+    color: #4f46e5;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.view-more-btn {
+    grid-column: 1 / -1;
+    background: transparent;
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 1rem auto;
+    width: 200px;
+}
+
+.view-more-btn:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+.secondary-features {
+    display: none;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.secondary-features.active {
+    display: grid;
+}
+
+.chart-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chart-placeholder {
+    background-color: #eef2ff;
+    border-radius: 1rem;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    font-weight: 600;
+  }
+
+  .chart-container {
+    background-color: #f9f9ff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    margin: 0rem auto;
+}
+
+  @media (max-width: 768px) {
+    .chart-card {
+      grid-column: span 1;
+    }
+  }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .features-header h1 {
+        font-size: 2rem;
+    }
+
+    .features-grid.custom-grid {
+        grid-template-areas: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .feature-card {
+        grid-area: auto !important;
+    }
+}
